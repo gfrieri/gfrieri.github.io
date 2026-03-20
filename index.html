@@ -1100,4 +1100,14 @@
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-  document.querySele
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Stagger reveal children
+  document.querySelectorAll('.skills-grid, .edu-grid').forEach(grid => {
+    grid.querySelectorAll('.reveal').forEach((el, i) => {
+      el.style.transitionDelay = `${i * 0.08}s`;
+    });
+  });
+</script>
+</body>
+</html>
